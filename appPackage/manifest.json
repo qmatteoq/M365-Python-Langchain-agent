@@ -1,0 +1,75 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.24",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Your Company",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Echo Agent${{APP_NAME_SUFFIX}}",
+        "full": "Microsoft Learn Assistant with MCP"
+    },
+    "description": {
+        "short": "AI agent with Microsoft Learn documentation access",
+        "full": "An intelligent agent that can search and retrieve information from Microsoft Learn documentation using the Model Context Protocol (MCP)"
+    },
+    "accentColor": "#FFFFFF",
+    "copilotAgents": {
+        "customEngineAgents": [
+            {
+                "type": "bot",
+                "id": "${{BOT_ID}}"
+            }
+        ]
+    },
+    "bots": [
+        {
+            "botId": "${{BOT_ID}}",
+            "scopes": [
+                "copilot",
+                "personal",
+                "team"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "copilot",
+                        "personal"
+                    ],
+                    "commands": [
+                        {
+                            "title": "How can you help me?",
+                            "description": "Learn about the assistant's capabilities"
+                        },
+                        {
+                            "title": "How do I create an Azure Function?",
+                            "description": "Search Microsoft Learn documentation for Azure Functions"
+                        },
+                        {
+                            "title": "Show me .NET code samples",
+                            "description": "Find code examples from Microsoft documentation"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
